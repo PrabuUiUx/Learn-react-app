@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Learn-react-app/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/Learn-react-app/static/js/main.ffe4ac8b.chunk.js",
+    "main.js.map": "/Learn-react-app/static/js/main.ffe4ac8b.chunk.js.map",
+    "runtime-main.js": "/Learn-react-app/static/js/runtime-main.49d6fd00.js",
+    "runtime-main.js.map": "/Learn-react-app/static/js/runtime-main.49d6fd00.js.map",
+    "static/js/2.90700344.chunk.js": "/Learn-react-app/static/js/2.90700344.chunk.js",
+    "static/js/2.90700344.chunk.js.map": "/Learn-react-app/static/js/2.90700344.chunk.js.map",
+    "static/js/3.be72c369.chunk.js": "/Learn-react-app/static/js/3.be72c369.chunk.js",
+    "static/js/3.be72c369.chunk.js.map": "/Learn-react-app/static/js/3.be72c369.chunk.js.map",
+    "index.html": "/Learn-react-app/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/Learn-react-app/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.90700344.chunk.js.LICENSE.txt": "/Learn-react-app/static/js/2.90700344.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/Learn-react-app/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.49d6fd00.js",
+    "static/js/2.90700344.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.ffe4ac8b.chunk.js"
+  ]
+}
