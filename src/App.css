@@ -36,3 +36,40 @@
     transform: rotate(360deg);
   }
 }
+.NavBar{
+  background-color: rgb(57, 57, 224);
+  width: 100%;
+  height: 80px;
+  color:cornsilk;
+ display: flex;
+ justify-content: flex-start;
+ align-items: center;
+}
+.NavBar .LeftSide{
+  flex:50%;
+  font-size: 30px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.NavBar .LeftSide .Links{
+  max-height: 80px;
+  
+}
+.NavBar .LeftSide .Links a{
+  color:white;
+  margin-left: 15px;
+
+}
+.NavBar .RightSide{
+  flex:50%;
+}
+.NavBar .RightSide a{
+  color:white;
+  margin-left: 15px;
+  font-size: 30px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.mc{
+  background-color:cornflowerblue;
+  min-height: 800px;
+}
