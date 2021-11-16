@@ -40,7 +40,7 @@
 .NavBar .LeftSide{
   flex:50%;
   font-size: 30px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
 .NavBar .LeftSide .Links{
   max-height: 80px;
@@ -48,15 +48,17 @@
 }
 .NavBar .LeftSide .Links a{
   color:white;
-  margin-left: 15px;
+  margin-left: 25px;
 
 }
 .NavBar .RightSide{
   flex:50%;
+  justify-content: flex-start;
+  align-items: center;
 }
 .NavBar .RightSide a{
   color:white;
-  margin-left: 15px;
+  margin-right: 25px;
   font-size: 30px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 
@@ -70,4 +72,11 @@ button:hover{
 .cstyle{
   width:calc();
   height:450px;
+}  
+.imgcrd:hover {
+  transform: scale(1.2);
+  border-radius: 5px;
+}
+.btng:hover{
+  transform: scale(1.2);
 }

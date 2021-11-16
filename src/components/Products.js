@@ -20,13 +20,14 @@ export default class Products extends Component {
     }
     render() {
         const {prod} = this.state;
+        // const [cartItem,setCartItem]= useState([]);
         return (
-            <div className="prods ">
-                <div class="ui special cards uic">
-      {prod.map((list)=>(
-  <div class="card " style={{width:"230px",height:"auto"}}>
-    <div class="blurring dimmable image">
-      <div class="ui dimmer">
+            <div className="prods " style={{marginTop:"25px"}}>
+                <div class="ui special cards uic" >
+          {prod.map((list)=>(
+          <div class="card " style={{width:"230px",height:"auto"}}>
+          <div class="blurring dimmable image">
+          <div class="ui dimmer">
         <div class="content">
           <div class="center">
             <div class="ui inverted button">Add to Cart</div>
@@ -34,7 +35,7 @@ export default class Products extends Component {
         </div>
       </div>
 
-          <img src={list.image} style={{width:"200px",height:"200px"}}/>
+          <img  className="imgcrd" src={list.image} style={{width:"200px",height:"200px"}} alt="img"/>
     </div>
     <div class="content">
       <a class="header">{list.title}</a>
@@ -46,6 +47,7 @@ export default class Products extends Component {
       <a>
         Rating:{list.rating.rate}
       </a>
+      <button className="ui green button btng" style={{marginLeft:"20px"}} >Add to Cart</button>
     </div>
   </div>
       ))}

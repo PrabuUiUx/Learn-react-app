@@ -15,11 +15,12 @@ const Navbar = () => {
             </div>
         </div>
         <div className="RightSide">
+        <Link style={{marginLeft:"25px",marginRight:"25px"}} to="/cart">Mycart</Link>
         <div className="ui icon input">
-        <input type="text" placeholder="Search..." style={{width:"400px"}} />
+        <input  type="text" placeholder="Search..." style={{width:"400px"}} />
         <i className="circular search link icon"></i>
         </div>
-        <Link to="/login">Login</Link>
+        <Link style={{marginLeft:"25px",marginRight:"25px"}} to="/login">Login</Link>
         </div>
         </div>
     )

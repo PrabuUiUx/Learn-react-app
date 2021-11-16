@@ -4,7 +4,7 @@ import Products from './Products';
 import AboutUs from './AboutUs';
 import Login from './Login';
 import {BrowserRouter, Route} from 'react-router-dom';
-import Test from '../components/test';
+import MyCart from './MyCart';
 
 
 
@@ -19,10 +19,10 @@ function App() {
      <Route path="/aboutus"  component={AboutUs}/>
      <Route path="/home"  component={Home}/>
      <Route path="/login"  component={Login}/>
+     <Route path="/cart"  component={MyCart}/>
      <Route path="/" exact component={Login}/>
      </BrowserRouter>
 
-     <Test/>
     </div>
   );
 }
