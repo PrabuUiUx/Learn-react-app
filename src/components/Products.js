@@ -3,13 +3,12 @@ import React, { Component } from 'react';
 import '../App.css';
 
 export default class Products extends Component {
-    constructor(props){
-        super(props);
-        this.state={
-            prod:[]
-        }
-    }
-
+constructor(props){
+  super(props)
+  this.state={
+    prod:[]
+  }
+}
     componentDidMount(){
         axios.get('https://fakestoreapi.com/products').then((res)=>{
         console.log("res",res.data)
@@ -25,6 +24,7 @@ export default class Products extends Component {
             <div className="prods " style={{marginTop:"25px"}}>
                 <div class="ui special cards uic" >
           {prod.map((list)=>(
+            <div key={list.id}>
           <div class="card " style={{width:"230px",height:"auto"}}>
           <div class="blurring dimmable image">
           <div class="ui dimmer">
@@ -34,8 +34,9 @@ export default class Products extends Component {
           </div>
         </div>
       </div>
-
+      <div style={{textAlign:"center"}}>
           <img  className="imgcrd" src={list.image} style={{width:"200px",height:"200px"}} alt="img"/>
+      </div>
     </div>
     <div class="content">
       <a class="header">{list.title}</a>
@@ -50,6 +51,8 @@ export default class Products extends Component {
       <button className="ui green button btng" style={{marginLeft:"20px"}} >Add to Cart</button>
     </div>
   </div>
+  </div>
+
       ))}
   </div>
             </div>

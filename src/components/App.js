@@ -5,13 +5,13 @@ import AboutUs from './AboutUs';
 import Login from './Login';
 import {BrowserRouter, Route} from 'react-router-dom';
 import MyCart from './MyCart';
-
-
-
-
+import {Provider} from 'react-redux';
+import store from './REDUX/Store.js';
+import Test from './REDUX/test';
 
 function App() {
   return (
+    <Provider store={store}>
     <div class="ui fluid container mc">
       <BrowserRouter>
      <Navbar/>
@@ -22,8 +22,9 @@ function App() {
      <Route path="/cart"  component={MyCart}/>
      <Route path="/" exact component={Login}/>
      </BrowserRouter>
-
+      <Test/>
     </div>
+    </Provider>
   );
 }
 
