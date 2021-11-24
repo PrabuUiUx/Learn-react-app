@@ -1,6 +1,6 @@
 import React from 'react'
-
 import {useForm}  from 'react-hook-form';
+import login from '../images/login.jpg'
 
 export default function Login (){
 
@@ -15,6 +15,7 @@ export default function Login (){
             <div className="ui card raised very padded text container segment" style={{padding:"10px"}}>
                 <div style={{textAlign:"center", alignContent:"center",alignItems:"center"}} >
                 <h2>Login</h2>
+                <img src ={login} alt="" style={{width:"100px",height:"100px"}}/>
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)} >
                 <div className="ui form">

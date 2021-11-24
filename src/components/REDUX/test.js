@@ -7,6 +7,7 @@ import {AddBasket} from './ACTIONS/addAction';
     return (
         <div>
             <h1>for test alone test</h1>
+            <button onClick={props.AddBasket}>click to add</button>
         </div>
     )
 }

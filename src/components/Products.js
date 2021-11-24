@@ -1,61 +1,59 @@
 import axios from 'axios';
-import React, { Component } from 'react';
+import React, {useEffect} from 'react';
+import { useSelector,useDispatch } from 'react-redux';
 import '../App.css';
+import {connect} from "react-redux";
+import {AddBasket} from './REDUX/ACTIONS/addAction';
+import {setProduct} from './REDUX/ACTIONS/prodAction';
+import 'semantic-ui-css/semantic.min.css';
 
-export default class Products extends Component {
-constructor(props){
-  super(props)
-  this.state={
-    prod:[]
-  }
+
+
+ const Products =()=> {
+
+const prod= useSelector((state) => state.allProducts.products );
+const dispatch = useDispatch();
+
+console.log('prod',prod)
+// const { title,price,image} = prod [0];
+
+
+const fetchProduct =async()=>{
+ const res = await axios.get("https://fakestoreapi.com/products")
+ .catch((err)=>{
+  console.log("error", err);
+ });
+ dispatch(setProduct(res.data));
 }
-    componentDidMount(){
-        axios.get('https://fakestoreapi.com/products').then((res)=>{
-        console.log("res",res.data)
-        this.setState({
-            prod:res.data
-        })    
-    })
-    }
-    render() {
-        const {prod} = this.state;
-        // const [cartItem,setCartItem]= useState([]);
-        return (
-            <div className="prods " style={{marginTop:"25px"}}>
-                <div class="ui special cards uic" >
-          {prod.map((list)=>(
-            <div key={list.id}>
-          <div class="card " style={{width:"230px",height:"auto"}}>
-          <div class="blurring dimmable image">
-          <div class="ui dimmer">
-        <div class="content">
-          <div class="center">
-            <div class="ui inverted button">Add to Cart</div>
+useEffect(() => {  
+  fetchProduct (); 
+}, []);
+console.log('appProd',prod)
+
+const renderList = prod.map((products)=>{
+  const {id, title,image ,price, category} = products
+
+  return (
+    <div className="prods"  style={{marginTop:"25px"}} key={id}>
+      <div className="ui special cards uic">
+        <div className="card">
+          <div className="image">
+            <img src={image} alt={title} />
+          </div>
+          <div className="content">
+            <div className="header">{title}</div>
+            <div className="meta price">${price}</div>
+            <div className="meta">{category}</div>
           </div>
         </div>
       </div>
-      <div style={{textAlign:"center"}}>
-          <img  className="imgcrd" src={list.image} style={{width:"200px",height:"200px"}} alt="img"/>
-      </div>
     </div>
-    <div class="content">
-      <a class="header">{list.title}</a>
-      <div class="meta">
-        <span class="date">{list.price}</span>
-      </div>
-    </div>
-    <div class="extra content">
-      <a>
-        Rating:{list.rating.rate}
-      </a>
-      <button className="ui green button btng" style={{marginLeft:"20px"}} >Add to Cart</button>
-    </div>
-  </div>
-  </div>
+  );  
+  });
+  return (
+    <>{renderList}</>
+  )  
+    
+  }
 
-      ))}
-  </div>
-            </div>
-        )
-    }
-}
+export default Products

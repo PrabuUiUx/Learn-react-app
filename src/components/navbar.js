@@ -2,8 +2,11 @@ import React from 'react';
 import "../App.css";
 import logo from '../images/logo.png';
 import {Link} from 'react-router-dom';
+import {connect} from "react-redux";
+import {getNumber} from './REDUX/ACTIONS/getAction'
 
-const Navbar = () => {
+const Navbar = (props) => {
+    console.log('propres',props)
     return (
         <div className="NavBar">
         <div className="LeftSide">
@@ -15,7 +18,9 @@ const Navbar = () => {
             </div>
         </div>
         <div className="RightSide">
-        <Link style={{marginLeft:"25px",marginRight:"25px"}} to="/cart">Mycart</Link>
+        <Link style={{marginLeft:"25px",marginRight:"25px"}} to="/cart"><i className="shopping cart icon">
+            </i><div class=" ui red label"></div></Link>
+        
         <div className="ui icon input">
         <input  type="text" placeholder="Search..." style={{width:"400px"}} />
         <i className="circular search link icon"></i>
@@ -26,4 +31,10 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
+const mapStateToProps = state =>({
+    basProps: state.cartReduce
+})
+export default connect(mapStateToProps,{getNumber})(Navbar) ;
+
+
+// {props.basProps.basketNumber}
