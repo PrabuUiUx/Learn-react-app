@@ -7,7 +7,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import MyCart from './MyCart';
 import {Provider} from 'react-redux';
 import store from './REDUX/Store.js';
-import Test from './REDUX/test';
+import ProductDetails from './PRODUCT/ProductDetails';
 
 function App() {
   return (
@@ -20,9 +20,9 @@ function App() {
      <Route path="/home"  component={Home}/>
      <Route path="/login"  component={Login}/>
      <Route path="/cart"  component={MyCart}/>
+     <Route path="/product/:productId" exact component={ProductDetails}/>
      <Route path="/" exact component={Login}/>
      </BrowserRouter>
-      <Test/>
     </div>
     </Provider>
   );

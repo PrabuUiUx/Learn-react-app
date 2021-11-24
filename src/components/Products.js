@@ -1,11 +1,8 @@
 import axios from 'axios';
 import React, {useEffect} from 'react';
 import { useSelector,useDispatch } from 'react-redux';
-import '../App.css';
-import {connect} from "react-redux";
-import {AddBasket} from './REDUX/ACTIONS/addAction';
 import {setProduct} from './REDUX/ACTIONS/prodAction';
-import 'semantic-ui-css/semantic.min.css';
+import {Link} from 'react-router-dom';
 
 
 
@@ -28,15 +25,15 @@ const fetchProduct =async()=>{
 useEffect(() => {  
   fetchProduct (); 
 }, []);
-console.log('appProd',prod)
 
 const renderList = prod.map((products)=>{
   const {id, title,image ,price, category} = products
 
   return (
-    <div className="prods"  style={{marginTop:"25px"}} key={id}>
-      <div className="ui special cards uic">
-        <div className="card">
+    <div className="four column wide"  style={{marginTop:"25px"}} key={id}>
+      <Link to={`/product/${id}`}>
+      <div className="ui link cards">
+        <div className="card" style={{width:"250px",height:"auto"}}>
           <div className="image">
             <img src={image} alt={title} />
           </div>
@@ -47,6 +44,7 @@ const renderList = prod.map((products)=>{
           </div>
         </div>
       </div>
+      </Link>
     </div>
   );  
   });
