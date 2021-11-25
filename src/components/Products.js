@@ -39,7 +39,7 @@ const renderList = prod.map((products)=>{
           </div>
           <div className="content">
             <div className="header">{title}</div>
-            <div className="meta price">${price}</div>
+            <div className="meta price">Rs.{Math.round(price*75)}</div>
             <div className="meta">{category}</div>
           </div>
         </div>

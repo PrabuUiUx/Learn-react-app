@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux';
 import {selectProduct} from '../REDUX/ACTIONS/prodAction';
 import axios from "axios";
-import { objectExpression } from '@babel/types';
 
  const ProductDetails = () => {
      const product = useSelector(state => state.product);
@@ -23,24 +22,30 @@ useEffect(() => {
                 }, [productId])
 
     return (
-        <div className="ui grid container">
+        <div className="ui grid container" style={{marginTop:"25px"}}>
+            <div class="ui breadcrumb">
+  <a class="section">Home</a>
+  <span class="divider">/</span>
+  <a class="section" >Products</a>
+  <span class="divider">/</span>
+  <div class="active section">{title}</div>
+</div>
             {Object.keys(product).length == 0?(<div>...Loading</div>):(
 
             
             <div className="ui placeholder segment">
                 <div className="ui two column stackable center aligned grid">
-                    <div className="ui vertical divider"> AND</div>
                     <div className="middle aligned row">
                         <div className="column 1p">
                             <img className="ui fluid image" src={image}/>
                         </div>
                         <div className="column rp">
-                            <h1>{title}</h1>
+                            <h1 style={{marginTop:"0px"}}>{title}</h1>
                             <h2>
-                                <a className="ui teal tag label">${price}</a>
+                                <a className="ui teal tag label">Rs. {Math.round(price*75)}</a>
                             </h2>
-                            <h3 className="ui brown block header"> {category} </h3>
-                            <p> {description} </p>
+                            <h3 className="ui brown block header" style={{marginTop:"auto"}}> {category} </h3>
+                            <p style={{fontSize:"25px",fontFamily:"-moz-initial"}}> {description} </p>
                             <div className="ui vertical animated button" tabIndex="0">
                                 <div className="hidden content">
                                     <i className="shop icon"></i>
