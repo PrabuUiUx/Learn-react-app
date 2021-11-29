@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React, {useEffect} from 'react';
 import { useSelector,useDispatch } from 'react-redux';
-import {setProduct} from './REDUX/ACTIONS/prodAction';
+import {fetchProducts} from './REDUX/ACTIONS/prodAction';
 import {Link} from 'react-router-dom';
+import "../App.css";
 
 
 
@@ -12,27 +13,20 @@ const prod= useSelector((state) => state.allProducts.products );
 const dispatch = useDispatch();
 
 console.log('prod',prod)
-// const { title,price,image} = prod [0];
 
 
-const fetchProduct =async()=>{
- const res = await axios.get("https://fakestoreapi.com/products")
- .catch((err)=>{
-  console.log("error", err);
- });
- dispatch(setProduct(res.data));
-}
 useEffect(() => {  
-  fetchProduct (); 
+  dispatch(fetchProducts()); 
 }, []);
 
 const renderList = prod.map((products)=>{
   const {id, title,image ,price, category} = products
 
   return (
-    <div className="four column wide"  style={{marginTop:"25px"}} key={id}>
+    <div className="ui container">
+    <div className="prods" style={{marginTop:"25px"}} >
       <Link to={`/product/${id}`}>
-      <div className="ui link cards">
+      <div className="ui special cards" key={id}>
         <div className="card" style={{width:"250px",height:"auto"}}>
           <div className="image">
             <img src={image} alt={title} />
@@ -46,6 +40,7 @@ const renderList = prod.map((products)=>{
       </div>
       </Link>
     </div>
+    </div>  
   );  
   });
   return (

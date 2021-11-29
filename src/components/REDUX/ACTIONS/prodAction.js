@@ -1,4 +1,6 @@
-import {SET_PRODUCT,SELECTED_PRODUCT} from './Types';
+import axios from 'axios';
+import StoreApi from '../../API/StoreApi';
+import {SET_PRODUCT,SELECTED_PRODUCT,FETCH_PRODUCTS} from './Types';
 
 export const setProduct = (products)=>{
     return {
@@ -14,3 +16,9 @@ export const selectProduct = (product)=>{
     }
 }
 
+export const fetchProducts = () => async (dispatch)=>
+{
+    const response = await StoreApi.get("/products");
+    dispatch({type:FETCH_PRODUCTS,payload:response.data})
+};
+  

@@ -24,9 +24,9 @@ useEffect(() => {
     return (
         <div className="ui grid container" style={{marginTop:"25px"}}>
             <div class="ui breadcrumb">
-  <a class="section">Home</a>
+  <a class="section" href="/home">Home</a>
   <span class="divider">/</span>
-  <a class="section" >Products</a>
+  <a class="section"  href="/products">Products</a>
   <span class="divider">/</span>
   <div class="active section">{title}</div>
 </div>
@@ -46,7 +46,7 @@ useEffect(() => {
                             </h2>
                             <h3 className="ui brown block header" style={{marginTop:"auto"}}> {category} </h3>
                             <p style={{fontSize:"25px",fontFamily:"-moz-initial"}}> {description} </p>
-                            <div className="ui vertical animated button" tabIndex="0">
+                            <div className="ui vertical animated button green" tabIndex="0"> Add to Cart
                                 <div className="hidden content">
                                     <i className="shop icon"></i>
                                 </div>

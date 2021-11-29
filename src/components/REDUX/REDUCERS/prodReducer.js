@@ -1,4 +1,4 @@
-import {SELECTED_PRODUCT, SET_PRODUCT} from '../ACTIONS/Types';
+import {SELECTED_PRODUCT,FETCH_PRODUCTS} from '../ACTIONS/Types';
 
 
 const initialState= {
@@ -6,8 +6,9 @@ const initialState= {
 };
 export const prodReducer =(state=initialState,{type,payload})=>{
     switch(type){
-        case SET_PRODUCT:
-            return {...state,products:payload}
+      
+            case FETCH_PRODUCTS:
+                return {...state,products:payload}
         default :
             return state;
     }
