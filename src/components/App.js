@@ -1,6 +1,6 @@
 import Navbar from '../components/navbar';
 import Home from './Home';
-import Products from './Products';
+import Products from './PRODUCT/Products';
 import AboutUs from './AboutUs';
 import Login from './Login';
 import {BrowserRouter, Route} from 'react-router-dom';

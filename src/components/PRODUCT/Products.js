@@ -1,9 +1,8 @@
-import axios from 'axios';
 import React, {useEffect} from 'react';
 import { useSelector,useDispatch } from 'react-redux';
-import {fetchProducts} from './REDUX/ACTIONS/prodAction';
+import {fetchProducts} from '../REDUX/ACTIONS/prodAction';
 import {Link} from 'react-router-dom';
-import "../App.css";
+import "../../App.css";
 
 
 
@@ -23,8 +22,8 @@ const renderList = prod.map((products)=>{
   const {id, title,image ,price, category} = products
 
   return (
-    <div className="ui container">
-    <div className="prods" style={{marginTop:"25px"}} >
+    <div className=" prods">
+    <div className="ui container" style={{marginTop:"25px"}} >
       <Link to={`/product/${id}`}>
       <div className="ui special cards" key={id}>
         <div className="card" style={{width:"250px",height:"auto"}}>

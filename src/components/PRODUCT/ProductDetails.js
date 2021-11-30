@@ -12,22 +12,22 @@ import axios from "axios";
 
      console.log('productId',productId);
 
-const fetchProductDetail = async()=>{
-    const res = await axios.get(`https://fakestoreapi.com/products/${productId}`).catch(err => {console.log(err)});
-    dispatch(selectProduct(res.data))
-}
+// const fetchProductDetail = async()=>{
+//     const res = await axios.get(`https://fakestoreapi.com/products/${productId}`).catch(err => {console.log(err)});
+//     dispatch(selectProduct(res.data))
+// }
 
 useEffect(() => {
-    if(productId && productId !=="")fetchProductDetail()
-                }, [productId])
-
+    if(productId && productId !=="")dispatch(selectProduct(productId))
+                }, [])
+ 
     return (
         <div className="ui grid container" style={{marginTop:"25px"}}>
             <div class="ui breadcrumb">
   <a class="section" href="/home">Home</a>
   <span class="divider">/</span>
   <a class="section"  href="/products">Products</a>
-  <span class="divider">/</span>
+  <span class="divider">/</span> 
   <div class="active section">{title}</div>
 </div>
             {Object.keys(product).length == 0?(<div>...Loading</div>):(
